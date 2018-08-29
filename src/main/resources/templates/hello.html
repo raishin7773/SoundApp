@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>環境音</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<style type="text/css">
+.btn {　
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+	<div class="jumbotron jumbotron-extend">
+		<div class="container-fluid jumbotron-container">
+			<input class="btn btn-default btn-lg" type="button" name="start"
+				value="川" onclick="audio_play()" /> <input
+				class="btn btn-default btn-lg" type="button" name="start2"
+				value="川2" onclick="audio_play2()" /> <input
+				class="btn btn-default btn-lg" type="button" name="start3" value="雨"
+				onclick="audio_play3()" /> <br> <input
+				class="btn btn-default btn-lg" type="button" name="stop" value="停止"
+				onclick="audio_pause()" />
+		</div>
+	</div>
+
+	<audio id="audio" loop="loop">
+		<source src="sound/near_a_brook.wav">
+	</audio>
+	<audio id="audio2" loop="loop">
+		<source src="sound/brook.mp3">
+	</audio>
+	<audio id="audio3" loop="loop">
+		<source src="sound/rain.mp3">
+	</audio>
+
+</body>
+<script>
+	function audio_play() {
+		audio_pause();
+		audio.play();
+	}
+	function audio_play2() {
+		audio_pause();
+		audio2.play();
+	}
+	function audio_play3() {
+		audio_pause();
+		audio3.play();
+	}
+	function audio_pause() {
+		audio.pause();
+		audio2.pause();
+		audio3.pause();
+	}
+</script>
+</html>
